@@ -20,7 +20,7 @@ func (copy cacheEntry) isExpired() bool {
 }
 
 func NewCache() Cache {
-	return Cache{}
+	return Cache{storage: make(map[string]cacheEntry)}
 }
 
 func (self *Cache) Get(key string) (string, bool) {
