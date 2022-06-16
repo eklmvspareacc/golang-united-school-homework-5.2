@@ -28,7 +28,7 @@ func (self *Cache) Get(key string) (string, bool) {
 	if ok && !entry.isExpired() {
 		return entry.value, ok
 	} else {
-		return "", ok
+		return "", false
 	}
 }
 
