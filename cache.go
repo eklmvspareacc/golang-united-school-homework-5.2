@@ -25,7 +25,7 @@ func NewCache() Cache {
 
 func (self *Cache) Get(key string) (string, bool) {
 	entry, ok := self.storage[key]
-	if ok || !entry.isExpired() {
+	if ok && !entry.isExpired() {
 		return entry.value, ok
 	} else {
 		return "", ok
